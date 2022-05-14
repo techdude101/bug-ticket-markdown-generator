@@ -1,1 +1,2 @@
-Login to ...
+Login to
+Click on

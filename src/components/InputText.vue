@@ -1,22 +1,26 @@
 <template>
-  <div>
-    <strong><label class="pt-4 pb-2 float-start"
-    :for=inputElementName :name=labelElementName>{{ labelText }}</label></strong>
-    <b-form-input :name=inputElementName
+  <div class="input-text">
+    <strong class="mytooltip"><label class="pt-4 pb-2 float-start"
+    :for=inputElementName :name=labelElementName>{{ labelText }}</label>
+    <span class="mytooltiptext" v-if="hasMounted && tooltipText.length !== 0">
+      {{ tooltipText }}</span>
+    </strong>
+    <input
+      :name=inputElementName
       v-model="textValue"
       :placeholder=placeholderText
-      @keyup=handleChange></b-form-input>
-    <custom-tool-tip v-if="hasMounted && tooltipText.length !== 0" :tooltipText="tooltipText"
-      :targetElementName="inputElementName">
-    </custom-tool-tip>
+      @keyup=handleChange
+      :pattern="pattern"
+      :disabled="inputDisabled"
+      />
   </div>
 </template>
 
 <script>
-import CustomToolTip from './CustomToolTip.vue';
+import '../styles/custom.css';
 
 export default {
-  components: { CustomToolTip },
+  // components: { CustomToolTip },
   name: 'InputText',
   props: {
     labelText: {
@@ -39,9 +43,25 @@ export default {
       default: 'input-name',
       type: String,
     },
+    textValue: {
+      default: '',
+      type: String,
+    },
     errorElementName: {
       default: 'error-name',
       type: String,
+    },
+    pattern: {
+      default: '[a-z0-9]',
+      type: String,
+    },
+    title: {
+      default: 'Alphanumeric characters',
+      type: String,
+    },
+    inputDisabled: {
+      default: false,
+      type: Boolean,
     },
   },
   mounted() {
@@ -52,15 +72,16 @@ export default {
   data() {
     return {
       hasMounted: false,
-      textValue: '',
     };
   },
   methods: {
-    getElementByName(name) {
-      return document.getElementsByName(name)[0];
-    },
     handleChange(event) {
       this.$emit('changed', event);
+    },
+  },
+  computed: {
+    getClass() {
+      return 'disabled';
     },
   },
 };

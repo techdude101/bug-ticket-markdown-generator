@@ -1,7 +1,7 @@
 *Summary:*
 <title>
 
-<project> <code> 
+<project>-<code>
 
 *Steps:*
 <steps>
@@ -10,4 +10,4 @@
 
 *Expected:*
 
-*Test Versions:*
+*Versions:*
