@@ -224,7 +224,6 @@ export default {
       }
     },
     handleOutputTextChange() {
-      this.descriptionPosition = this.getTitlePosition();
       this.disableInputFields();
     },
     handleListChange(value) {
