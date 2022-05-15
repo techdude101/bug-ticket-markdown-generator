@@ -96,3 +96,28 @@ input:disabled {
   background-color: rgba(0, 0, 0, 0.1);
   cursor: not-allowed;
 }
+
+/* label > svg {
+  display: none;
+} */
+
+/* label:hover > svg {
+  display: inline;
+  border: 1px solid blue;
+} */
+
+.editIcon {
+  line-height: 2rem;
+}
+
+.editIcon svg {
+  transition: all 100ms;
+  width: 1rem;
+  visibility: hidden;
+}
+
+.editIcon:hover svg {
+  transition: all 1s;
+  width: 1rem;
+  visibility: visible;
+}

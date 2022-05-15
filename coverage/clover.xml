@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651313028734" clover="3.2.0">
-  <project timestamp="1651313028734" name="All files">
-    <metrics statements="27" coveredstatements="18" conditionals="15" coveredconditionals="14" methods="12" coveredmethods="5" elements="54" coveredelements="37" complexity="0" loc="27" ncloc="27" packages="2" files="3" classes="3"/>
+<coverage generated="1652547123606" clover="3.2.0">
+  <project timestamp="1652547123606" name="All files">
+    <metrics statements="48" coveredstatements="22" conditionals="38" coveredconditionals="14" methods="16" coveredmethods="5" elements="102" coveredelements="41" complexity="0" loc="48" ncloc="48" packages="3" files="4" classes="4"/>
     <package name="components">
-      <metrics statements="13" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="3"/>
+      <metrics statements="14" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="3"/>
       <file name="CustomToolTip.vue" path="C:\code\JS\vuejs\bug-ticket-markdown-generator\src\components\CustomToolTip.vue">
         <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
         <line num="24" count="0" type="stmt"/>
@@ -16,18 +16,26 @@
         <line num="45" count="0" type="stmt"/>
       </file>
       <file name="InputText.vue" path="C:\code\JS\vuejs\bug-ticket-markdown-generator\src\components\InputText.vue">
-        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="59" count="3" type="stmt"/>
-        <line num="60" count="3" type="stmt"/>
-        <line num="64" count="3" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
+        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="68" count="3" type="stmt"/>
+        <line num="69" count="3" type="stmt"/>
+        <line num="73" count="3" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="styles">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="custom.css" path="C:\code\JS\vuejs\bug-ticket-markdown-generator\src\styles\custom.css">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
     </package>
     <package name="utils">
-      <metrics statements="14" coveredstatements="14" conditionals="15" coveredconditionals="14" methods="2" coveredmethods="2"/>
+      <metrics statements="33" coveredstatements="17" conditionals="38" coveredconditionals="14" methods="5" coveredmethods="2"/>
       <file name="helpers.js" path="C:\code\JS\vuejs\bug-ticket-markdown-generator\src\utils\helpers.js">
-        <metrics statements="14" coveredstatements="14" conditionals="15" coveredconditionals="14" methods="2" coveredmethods="2"/>
+        <metrics statements="33" coveredstatements="17" conditionals="38" coveredconditionals="14" methods="5" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="7" type="cond" truecount="2" falsecount="0"/>
         <line num="3" count="5" type="cond" truecount="2" falsecount="0"/>
@@ -42,6 +50,25 @@
         <line num="14" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
+        <line num="25" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="27" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="0" type="stmt"/>
       </file>
     </package>
   </project>

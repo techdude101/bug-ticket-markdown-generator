@@ -1,13 +1,13 @@
-*Summary:*
-<title>
+*Description:*
+<description>
 
 <project>-<code>
 
-*Steps:*
+*Steps to Reproduce:*
 <steps>
 
-*Actual:*
+*Actual Result:*
 
-*Expected:*
+*Expected Result:*
 
 *Versions:*
