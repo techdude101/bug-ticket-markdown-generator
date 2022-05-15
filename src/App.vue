@@ -109,6 +109,7 @@ import {
   replaceTextAt,
   isTextValid,
   getBrowserVersion,
+  getTemplateFromLocalStorage,
 } from './utils/helpers';
 
 export default {
@@ -125,7 +126,6 @@ export default {
   data() {
     return {
       hasMounted: false,
-      outputTextDefault: bugTemplate,
       outputText: null,
       listOptions: this.getSteps(),
       ticketNumbersData: [],
@@ -139,6 +139,11 @@ export default {
     };
   },
   computed: {
+    outputTextDefault() {
+      const template = getTemplateFromLocalStorage();
+      if (template) return template;
+      return bugTemplate;
+    },
     browserVersion() {
       return getBrowserVersion();
     },

@@ -46,3 +46,8 @@ export const isBrowserMicrosoftEdge = () => {
   if (!browser) return null;
   return browser.includes('Edg');
 };
+
+export const getTemplateFromLocalStorage = () => {
+  if (localStorage.template) return JSON.parse(localStorage.getItem('template'));
+  return null;
+};
