@@ -1,0 +1,93 @@
+<template>
+  <div class="input-text">
+    <strong class="mytooltip"><label class="pt-4 pb-2 float-start"
+    :for=inputElementName :name=labelElementName>{{ labelText }}</label>
+    <span class="mytooltiptext" v-if="hasMounted && tooltipText.length !== 0">
+      {{ tooltipText }}</span>
+    </strong>
+    <input
+      :name=inputElementName
+      v-model="textValue"
+      :placeholder=placeholderText
+      @keyup=handleChange
+      :pattern="pattern"
+      :disabled="inputDisabled"
+      />
+  </div>
+</template>
+
+<script>
+import '../styles/custom.css';
+
+export default {
+  // components: { CustomToolTip },
+  name: 'InputText',
+  props: {
+    labelText: {
+      default: 'Label',
+      type: String,
+    },
+    placeholderText: {
+      default: 'Placeholder',
+      type: String,
+    },
+    tooltipText: {
+      default: 'Tooltip',
+      type: String,
+    },
+    labelElementName: {
+      default: 'label-name',
+      type: String,
+    },
+    inputElementName: {
+      default: 'input-name',
+      type: String,
+    },
+    textValue: {
+      default: '',
+      type: String,
+    },
+    errorElementName: {
+      default: 'error-name',
+      type: String,
+    },
+    pattern: {
+      default: '[a-z0-9]',
+      type: String,
+    },
+    title: {
+      default: 'Alphanumeric characters',
+      type: String,
+    },
+    inputDisabled: {
+      default: false,
+      type: Boolean,
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.hasMounted = true;
+    });
+  },
+  data() {
+    return {
+      hasMounted: false,
+    };
+  },
+  methods: {
+    handleChange(event) {
+      this.$emit('changed', event);
+    },
+  },
+  computed: {
+    getClass() {
+      return 'disabled';
+    },
+  },
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>

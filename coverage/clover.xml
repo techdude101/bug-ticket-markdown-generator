@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1651313028734" clover="3.2.0">
+  <project timestamp="1651313028734" name="All files">
+    <metrics statements="27" coveredstatements="18" conditionals="15" coveredconditionals="14" methods="12" coveredmethods="5" elements="54" coveredelements="37" complexity="0" loc="27" ncloc="27" packages="2" files="3" classes="3"/>
+    <package name="components">
+      <metrics statements="13" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="3"/>
+      <file name="CustomToolTip.vue" path="C:\code\JS\vuejs\bug-ticket-markdown-generator\src\components\CustomToolTip.vue">
+        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+      </file>
+      <file name="InputText.vue" path="C:\code\JS\vuejs\bug-ticket-markdown-generator\src\components\InputText.vue">
+        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="59" count="3" type="stmt"/>
+        <line num="60" count="3" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="14" coveredstatements="14" conditionals="15" coveredconditionals="14" methods="2" coveredmethods="2"/>
+      <file name="helpers.js" path="C:\code\JS\vuejs\bug-ticket-markdown-generator\src\utils\helpers.js">
+        <metrics statements="14" coveredstatements="14" conditionals="15" coveredconditionals="14" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="3" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="9" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
