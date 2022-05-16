@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652547123606" clover="3.2.0">
-  <project timestamp="1652547123606" name="All files">
-    <metrics statements="48" coveredstatements="22" conditionals="38" coveredconditionals="14" methods="16" coveredmethods="5" elements="102" coveredelements="41" complexity="0" loc="48" ncloc="48" packages="3" files="4" classes="4"/>
+<coverage generated="1652731099420" clover="3.2.0">
+  <project timestamp="1652731099420" name="All files">
+    <metrics statements="43" coveredstatements="23" conditionals="40" coveredconditionals="14" methods="11" coveredmethods="5" elements="94" coveredelements="42" complexity="0" loc="43" ncloc="43" packages="3" files="3" classes="3"/>
     <package name="components">
-      <metrics statements="14" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="3"/>
-      <file name="CustomToolTip.vue" path="C:\code\JS\vuejs\bug-ticket-markdown-generator\src\components\CustomToolTip.vue">
-        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-      </file>
+      <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
       <file name="InputText.vue" path="C:\code\JS\vuejs\bug-ticket-markdown-generator\src\components\InputText.vue">
         <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="68" count="3" type="stmt"/>
-        <line num="69" count="3" type="stmt"/>
-        <line num="73" count="3" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="73" count="2" type="stmt"/>
         <line num="79" count="0" type="stmt"/>
         <line num="84" count="0" type="stmt"/>
       </file>
@@ -33,9 +22,9 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="33" coveredstatements="17" conditionals="38" coveredconditionals="14" methods="5" coveredmethods="2"/>
+      <metrics statements="36" coveredstatements="18" conditionals="40" coveredconditionals="14" methods="6" coveredmethods="2"/>
       <file name="helpers.js" path="C:\code\JS\vuejs\bug-ticket-markdown-generator\src\utils\helpers.js">
-        <metrics statements="33" coveredstatements="17" conditionals="38" coveredconditionals="14" methods="5" coveredmethods="2"/>
+        <metrics statements="36" coveredstatements="18" conditionals="40" coveredconditionals="14" methods="6" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="7" type="cond" truecount="2" falsecount="0"/>
         <line num="3" count="5" type="cond" truecount="2" falsecount="0"/>
@@ -69,6 +58,9 @@
         <line num="45" count="0" type="stmt"/>
         <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="47" count="0" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="0" type="stmt"/>
       </file>
     </package>
   </project>
