@@ -8,10 +8,13 @@
         {{ tooltipText }}
       </span>
     </strong>
-    <b-form-input list="my-list-id" :name=inputElementName
+    <b-form-input
+      list="my-list-id"
+      :name=inputElementName
       v-model="value"
       @change=handleChange
       @keyup=handleChange
+      :pattern="pattern"
       v-on:keyup.enter=handleKeyPress></b-form-input>
     <datalist id="my-list-id" class="custom-datalist">
       <option :key=option
@@ -34,6 +37,9 @@ export default {
     labelText: {
       default: 'Label',
       type: String,
+    },
+    pattern: {
+      default: '[a-zA-Z0-9]',
     },
     placeholderText: {
       default: 'Placeholder',

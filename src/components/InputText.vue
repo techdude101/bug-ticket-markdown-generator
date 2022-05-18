@@ -7,7 +7,7 @@
     </strong>
     <input
       :name=inputElementName
-      v-model="textValue"
+      :value="textValue"
       :placeholder=placeholderText
       @keyup=handleChange
       :pattern="pattern"
@@ -52,7 +52,7 @@ export default {
       type: String,
     },
     pattern: {
-      default: '[a-z0-9]',
+      default: '[a-zA-Z0-9]+',
       type: String,
     },
     title: {
