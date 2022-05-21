@@ -12,6 +12,7 @@
       @keyup=handleChange
       :pattern="pattern"
       :disabled="inputDisabled"
+      :maxlength="maxLength"
       />
   </div>
 </template>
@@ -62,6 +63,10 @@ export default {
     inputDisabled: {
       default: false,
       type: Boolean,
+    },
+    maxLength: {
+      default: 10,
+      type: Number,
     },
   },
   mounted() {

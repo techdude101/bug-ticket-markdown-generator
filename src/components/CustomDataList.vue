@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="input-text">
     <strong class="mytooltip">
       <label class="pt-4 pb-2 float-start"
         :for=inputElementName :name=labelElementName>{{ labelText }}
@@ -8,30 +8,26 @@
         {{ tooltipText }}
       </span>
     </strong>
-    <b-form-input
+    <input type="text"
       list="my-list-id"
       :name=inputElementName
       v-model="value"
       @change=handleChange
       @keyup=handleChange
       :pattern="pattern"
-      v-on:keyup.enter=handleKeyPress></b-form-input>
+      v-on:keyup.enter=handleKeyPress
+    />
     <datalist id="my-list-id" class="custom-datalist">
       <option :key=option
         v-for="option in listOptions">{{ option }}</option>
     </datalist>
-    <!-- <custom-tool-tip v-if="hasMounted && tooltipText.length !== 0" :tooltipText="tooltipText"
-      :targetElementName="inputElementName">
-    </custom-tool-tip> -->
   </div>
 </template>
 
 <script>
-// import CustomToolTip from './CustomToolTip.vue';
 import '../styles/custom.css';
 
 export default {
-  // components: { CustomToolTip },
   name: 'CustomDataList',
   props: {
     labelText: {

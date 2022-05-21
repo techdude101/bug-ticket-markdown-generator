@@ -16,6 +16,7 @@
       @changed="handleChange"
       :inputDisabled="inputsDisabled"
       :textValue=description
+      :maxLength="bugDescriptionMaxLength"
     />
     </b-row>
     <b-row>
@@ -31,6 +32,7 @@
           @changed="handleChange"
           :inputDisabled="inputsDisabled"
           :textValue=projectCode
+          :maxLength="projectCodeMaxLength"
         />
       </b-col>
       <b-col>
@@ -46,6 +48,7 @@
           @focus="this.$root.$emit('bv::hide::tooltip')"
           :inputDisabled="inputsDisabled"
           :textValue="ticketNumbersData.join(',')"
+          :maxLength="ticketNumbersMaxLength"
       />
       </b-col>
     </b-row>
@@ -53,7 +56,7 @@
       labelText="Add Steps"
       placeholderText="Login to ..."
       tooltipText="Steps to Recreate"
-      :pattern="regexPatterns.ALPHA_NUMERIC_WHITESPACE"
+      :pattern="regexPatterns.ALL_CHARACTERS"
       inputElementName="addStepsInput"
       labelElementName="addStepsLabel"
       errorElementName="addStepsError"
@@ -91,7 +94,9 @@
           ></textarea>
         <b-row>
       <b-col>
-      <button @click="resetForm" class="mt-4 mb-2 float-end min-width-10">Reset</button>
+        <button @click="resetForm" class="mt-4 mb-2 float-end min-width-10">
+          Reset
+        </button>
       </b-col>
     </b-row>
     </div>
@@ -142,6 +147,9 @@ export default {
       descriptionPosition: 0,
       inputsDisabled: false,
       regexPatterns,
+      bugDescriptionMaxLength: 120,
+      projectCodeMaxLength: 8,
+      ticketNumbersMaxLength: 10,
     };
   },
   computed: {
@@ -199,7 +207,7 @@ export default {
       this.$root.$emit('bv::hide::tooltip');
       switch (event.target.name) {
         case 'ticketNumbersInput':
-          if (isTextValid(event.target.value, 10)) {
+          if (isTextValid(event.target.value, this.ticketNumbersMaxLength)) {
             this.ticketNumbersData = event.target.value.split(',');
           } else {
             const oldValue = this.ticketNumbersData;
@@ -208,7 +216,7 @@ export default {
           }
           break;
         case 'projectCodeInput':
-          if (isTextValid(event.target.value, 8)) {
+          if (isTextValid(event.target.value, this.projectCodeMaxLength)) {
             this.projectCode = event.target.value;
           } else {
             const oldValue = this.projectCode;
@@ -217,7 +225,7 @@ export default {
           }
           break;
         case 'bugDescriptionInput':
-          if (isTextValid(event.target.value, 120)) {
+          if (isTextValid(event.target.value, this.bugDescriptionMaxLength)) {
             this.description = event.target.value;
           } else {
             const oldValue = this.description;

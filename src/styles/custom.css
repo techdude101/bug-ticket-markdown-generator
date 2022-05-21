@@ -5,6 +5,7 @@ button {
   background-color: #666;
   border: 1px solid #666;
   padding: 0.3rem 0.8rem;
+  min-height: 2.2rem;
 }
 
 button:hover {
