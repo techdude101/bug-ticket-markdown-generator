@@ -1,5 +1,5 @@
-*Description:*
-<description>
+*Summary:*
+<summary>
 
 <project>-<code>
 

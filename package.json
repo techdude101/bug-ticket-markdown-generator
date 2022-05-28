@@ -7,7 +7,7 @@
     "serve": "vue-cli-service serve --port 5000",
     "build": "vue-cli-service build",
     "deploy": "node ./node_modules/vue-gh-pages/index.js -p -b gh-pages",
-    "test:unit": "vue-cli-service test:unit --coverage --watch helpers",
+    "test:unit": "vue-cli-service test:unit --coverage",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

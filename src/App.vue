@@ -6,18 +6,18 @@
       </b-row>
       <b-row>
     <input-text
-      labelText="Description"
-      placeholderText="Description"
+      labelText="Summary"
+      placeholderText="Enter a brief summary ..."
       tooltipText=""
       :pattern="regexPatterns.ALL_CHARACTERS"
-      inputElementName="bugDescriptionInput"
-      labelElementName="bugDescriptionLabel"
-      errorElementName="bugDescriptionError"
-      errorText="Invalid description"
+      inputElementName="bugsummaryInput"
+      labelElementName="bugsummaryLabel"
+      errorElementName="bugsummaryError"
+      errorText="Invalid summary"
       @changed="handleChange"
       :inputDisabled="inputsDisabled"
-      :textValue=description
-      :maxLength="bugDescriptionMaxLength"
+      :textValue=summary
+      :maxLength="bugsummaryMaxLength"
     />
     </b-row>
     <b-row v-if="templateContainsProjectCode">
@@ -144,14 +144,14 @@ export default {
       listOptions: this.getSteps(),
       ticketNumbersData: [],
       projectCode: '',
-      description: '',
+      summary: '',
       stepTextValue: '',
       stepBuffer: [],
       steps: [],
-      descriptionPosition: 0,
+      summaryPosition: 0,
       inputsDisabled: false,
       regexPatterns,
-      bugDescriptionMaxLength: 120,
+      bugsummaryMaxLength: 120,
       projectCodeMaxLength: 8,
       ticketNumbersMaxLength: 10,
     };
@@ -178,8 +178,8 @@ export default {
         text = this.outputText;
       }
 
-      if (this.description.length > 0) {
-        text = replaceTextAt(text, '<description>', this.description, this.descriptionPosition);
+      if (this.summary.length > 0) {
+        text = replaceTextAt(text, '<summary>', this.summary, this.summaryPosition);
       }
       switch (this.ticketNumbersData.length) {
         case 1:
@@ -242,17 +242,17 @@ export default {
             this.projectCode = oldValue;
           }
           break;
-        case 'bugDescriptionInput':
+        case 'bugsummaryInput':
           if (event.target.value === '') {
-            this.description = '';
+            this.summary = '';
             break;
           }
-          if (isTextValid(event.target.value, this.bugDescriptionMaxLength)) {
-            this.description = event.target.value;
+          if (isTextValid(event.target.value, this.bugsummaryMaxLength)) {
+            this.summary = event.target.value;
           } else {
-            const oldValue = this.description;
-            this.description = '';
-            this.description = oldValue;
+            const oldValue = this.summary;
+            this.summary = '';
+            this.summary = oldValue;
           }
           break;
         default:
@@ -303,14 +303,14 @@ export default {
       // Clear the add step input field
       this.stepTextValue = '';
     },
-    getDescriptionPosition() {
+    getsummaryPosition() {
       if (this.outputText == null) return 0;
-      if (this.description === '') return 0;
-      return this.outputText.search(this.description);
+      if (this.summary === '') return 0;
+      return this.outputText.search(this.summary);
     },
     resetForm() {
       this.projectCode = '';
-      this.description = '';
+      this.summary = '';
       this.stepTextValue = '';
       this.ticketNumbersData = [];
       this.steps = [];
