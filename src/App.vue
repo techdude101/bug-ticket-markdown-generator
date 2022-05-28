@@ -63,7 +63,7 @@
       :listOptions=listOptions
       @changed="handleListChange"
       @keypress="handleKeyPress"
-      v-model="stepTextValue"
+      :value="stepTextValue"
     />
     <b-row>
       <b-col>
@@ -255,12 +255,13 @@ export default {
       this.outputText = e.target.value;
       this.disableInputFields();
     },
-    handleListChange(value) {
+    handleListChange(event) {
       this.$root.$emit('bv::hide::tooltip');
-      if (value.trim().length < 1) {
+      if (event.target.value.trim().length < 1) {
         return;
       }
-      this.stepBuffer = `# ${value}`;
+      this.stepBuffer = `# ${event.target.value}`;
+      this.stepTextValue = event.target.value;
     },
     addStep() {
       // Prevent adding empty steps

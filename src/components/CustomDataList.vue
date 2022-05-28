@@ -11,7 +11,7 @@
     <input type="text"
       list="my-list-id"
       :name=inputElementName
-      v-model="value"
+      :value="value"
       @change=handleChange
       @keyup=handleChange
       :pattern="pattern"
@@ -82,8 +82,8 @@ export default {
     getElementByName(name) {
       return document.getElementsByName(name)[0];
     },
-    handleChange() {
-      this.$emit('changed', this.value);
+    handleChange(event) {
+      this.$emit('changed', event);
     },
     handleKeyPress() {
       this.$emit('keypress');
