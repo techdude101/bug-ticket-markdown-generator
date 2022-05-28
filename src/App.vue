@@ -13,13 +13,14 @@
       inputElementName="bugDescriptionInput"
       labelElementName="bugDescriptionLabel"
       errorElementName="bugDescriptionError"
+      errorText="Invalid description"
       @changed="handleChange"
       :inputDisabled="inputsDisabled"
       :textValue=description
       :maxLength="bugDescriptionMaxLength"
     />
     </b-row>
-    <b-row>
+    <b-row v-if="templateContainsProjectCode">
       <b-col>
         <input-text
           labelText="Project Code"
@@ -29,6 +30,7 @@
           inputElementName="projectCodeInput"
           labelElementName="projectCodeLabel"
           errorElementName="projectCodeError"
+          errorText="Invalid project code"
           @changed="handleChange"
           :inputDisabled="inputsDisabled"
           :textValue=projectCode
@@ -44,6 +46,7 @@
           inputElementName="ticketNumbersInput"
           labelElementName="ticketNumbersLabel"
           errorElementName="ticketNumbersError"
+          errorText="Invalid ticket number(s)"
           @changed="handleChange"
           @focus="this.$root.$emit('bv::hide::tooltip')"
           :inputDisabled="inputsDisabled"
@@ -70,7 +73,7 @@
       <button @click="addStep" class="mt-4 mb-2 float-end min-width-12">+ Add Step</button>
       </b-col>
     </b-row>
-    <b-row class="mt-2">
+    <b-row>
       <b-col>
         <div v-if="hasMounted">
           <strong>
@@ -158,6 +161,11 @@ export default {
       const template = getTemplateFromLocalStorage();
       if (template) return template;
       return bugTemplate;
+    },
+    templateContainsProjectCode() {
+      const containsCode = (this.outputTextDefault.search('<code>') !== -1);
+      const containsProject = (this.outputTextDefault.search('<project>') !== -1);
+      return (containsCode && containsProject);
     },
     browserVersion() {
       return getBrowserVersion();

@@ -1,7 +1,7 @@
 <template>
   <div class="input-text">
     <strong class="mytooltip">
-      <label class="pt-4 pb-2 float-start"
+      <label class="pt-2 pb-2 float-start"
         :for=inputElementName :name=labelElementName>{{ labelText }}
       </label>
       <span class="mytooltip__left mytooltiptext" v-if="hasMounted && tooltipText.length !== 0">

@@ -1,6 +1,6 @@
 <template>
   <div class="input-text">
-    <strong class="mytooltip"><label class="pt-4 pb-2 float-start"
+    <strong class="mytooltip"><label class="pb-2 float-start"
     :for=inputElementName :name=labelElementName>{{ labelText }}</label>
     <span class="mytooltiptext" v-if="hasMounted && tooltipText.length !== 0">
       {{ tooltipText }}</span>
@@ -14,6 +14,10 @@
       :disabled="inputDisabled"
       :maxlength="maxLength"
       />
+      <label
+      for=inputElementName
+      class="error-label"
+      :name=errorElementName>{{ hasErrors && textValue.length > 0 ? errorText : ''}}</label>
   </div>
 </template>
 
@@ -22,7 +26,6 @@ import '../styles/colours.css';
 import '../styles/custom.css';
 
 export default {
-  // components: { CustomToolTip },
   name: 'InputText',
   props: {
     labelText: {
@@ -53,6 +56,10 @@ export default {
       default: 'error-name',
       type: String,
     },
+    errorText: {
+      default: 'Error',
+      type: String,
+    },
     pattern: {
       default: '[a-zA-Z0-9]+',
       type: String,
@@ -78,11 +85,13 @@ export default {
   data() {
     return {
       hasMounted: false,
+      hasErrors: false,
     };
   },
   methods: {
     handleChange(event) {
       this.$emit('changed', event);
+      this.hasErrors = event.target.validity.patternMismatch;
     },
   },
 };
