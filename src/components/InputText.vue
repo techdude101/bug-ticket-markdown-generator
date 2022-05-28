@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import '../styles/colours.css';
 import '../styles/custom.css';
 
 export default {

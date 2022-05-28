@@ -9,7 +9,7 @@
       labelText="Description"
       placeholderText="Description"
       tooltipText=""
-      :pattern="regexPatterns.PRINTABLE_CHARACTERS"
+      :pattern="regexPatterns.ALL_CHARACTERS"
       inputElementName="bugDescriptionInput"
       labelElementName="bugDescriptionLabel"
       errorElementName="bugDescriptionError"
@@ -129,6 +129,7 @@ export default {
     CustomDataList,
   },
   mounted() {
+    document.title = 'Bug Ticket Markdown Generator';
     this.$nextTick(() => {
       this.hasMounted = true;
     });
@@ -306,6 +307,7 @@ export default {
       this.ticketNumbersData = [];
       this.steps = [];
       this.enableInputFields();
+      this.outputText = this.outputTextDefault;
     },
   },
 };

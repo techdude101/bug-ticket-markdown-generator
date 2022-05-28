@@ -2,8 +2,8 @@ button {
   border-radius: 4px;
   box-shadow: none;
   color: white;
-  background-color: #666;
-  border: 1px solid #666;
+  background-color: var(--colour-primary, black);
+  border: 1px solid var(--colour-primary, black);
   padding: 0.3rem 0.8rem;
   min-height: 2.2rem;
 }
@@ -16,13 +16,13 @@ button:hover {
 }
 
 textarea {
-  color: white;
   height: 100%;
   width: 100%;
+  color: var(--text-colour-primary, black);
   border-radius: 4px;
   font-size: 16px;
   font-family: 'Avenir LT Std', sans-serif;
-  border: 1px solid rgb(102, 102, 102);
+  border: 1px solid var(--colour-primary, rgb(102, 102, 102));
   white-space: pre-line;
   padding: 1rem;
   background-image: url('../assets/bug-background.webp');
@@ -41,7 +41,7 @@ textarea {
 }
 
 .input-text input:invalid {
-  border: 2px solid red;
+  border: 2px solid var(--colour-error, green);
 }
 
 input:invalid {
