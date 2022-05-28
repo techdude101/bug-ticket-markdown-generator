@@ -84,11 +84,6 @@ export default {
       this.$emit('changed', event);
     },
   },
-  computed: {
-    getClass() {
-      return 'disabled';
-    },
-  },
 };
 </script>
 

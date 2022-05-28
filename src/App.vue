@@ -108,8 +108,6 @@
 
 <script>
 // eslint-disable-next-line
-import savedSteps from 'raw-loader!./assets/steps.txt';
-// eslint-disable-next-line
 import bugTemplate from 'raw-loader!./assets/template.txt';
 import InputText from './components/InputText.vue';
 import CustomDataList from './components/CustomDataList.vue';
@@ -119,6 +117,8 @@ import {
   isTextValid,
   getBrowserVersion,
   getTemplateFromLocalStorage,
+  saveDataToLocalStorage,
+  getDataFromLocalStorage,
 } from './utils/helpers';
 import regexPatterns from './constants/regexPatterns';
 
@@ -189,10 +189,11 @@ export default {
   },
   methods: {
     getSteps() {
-      return localStorage.steps !== undefined ? localStorage.steps.split(',') : savedSteps.split('\n');
+      const steps = getDataFromLocalStorage('steps');
+      return steps !== undefined && steps != null ? steps : ['Login to', 'Click on'];
     },
     saveSteps() {
-      localStorage.steps = this.listOptions.join(',');
+      saveDataToLocalStorage('steps', this.listOptions);
     },
     disableInputFields() {
       this.inputsDisabled = true;
@@ -207,6 +208,10 @@ export default {
       this.$root.$emit('bv::hide::tooltip');
       switch (event.target.name) {
         case 'ticketNumbersInput':
+          if (event.target.value === '') {
+            this.ticketNumbersData = [];
+            break;
+          }
           if (isTextValid(event.target.value, this.ticketNumbersMaxLength)) {
             this.ticketNumbersData = event.target.value.split(',');
           } else {
@@ -216,6 +221,10 @@ export default {
           }
           break;
         case 'projectCodeInput':
+          if (event.target.value === '') {
+            this.projectCode = '';
+            break;
+          }
           if (isTextValid(event.target.value, this.projectCodeMaxLength)) {
             this.projectCode = event.target.value;
           } else {
@@ -225,6 +234,10 @@ export default {
           }
           break;
         case 'bugDescriptionInput':
+          if (event.target.value === '') {
+            this.description = '';
+            break;
+          }
           if (isTextValid(event.target.value, this.bugDescriptionMaxLength)) {
             this.description = event.target.value;
           } else {
