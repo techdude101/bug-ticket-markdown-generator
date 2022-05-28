@@ -160,6 +160,8 @@ export default {
     outputTextDefault() {
       const template = getTemplateFromLocalStorage();
       if (template) return template;
+      // Save the default template in local storage if it doesn't exist
+      saveDataToLocalStorage('template', bugTemplate);
       return bugTemplate;
     },
     templateContainsProjectCode() {
