@@ -86,7 +86,7 @@
                 for="outputTextArea"
                 name="outputTextLabel"
                 >Output
-                <a href="editTemplate"
+                <a href="https://techdude101.github.io/edit-template-page/"
                   ><span id="editIcon" class="float-right">
                     <!-- Edit icon -->
                     <svg
